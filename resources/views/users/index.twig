@@ -1,0 +1,16 @@
+{% extends 'layout/app.twig' %}
+
+{% block content %}
+    <h3>products</h3>
+    <hr>
+    {% if products is not empty %}
+        {% for product in products %}
+            <div class="user">
+                <h4>{{ product.title }} ({{ product.description }})</h4>
+            </div>
+        {% endfor %}
+        {{products.links |raw}}
+    {% else %}
+        <p>No products</p>
+    {% endif %}
+{% endblock %}
